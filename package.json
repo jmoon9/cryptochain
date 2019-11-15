@@ -1,0 +1,56 @@
+{
+  "name": "cryptochain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "npm run build-client & node app.js",
+    "b-end": "nodemon app.js",
+    "f-end": "npm run dev-client",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon app.js",
+    "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
+    "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
+    "clean": "rmdir /q /s .cache"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@material-ui/lab": "^4.0.0-alpha.32",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "config": "^3.2.4",
+    "elliptic": "^6.4.1",
+    "express": "^4.16.3",
+    "hex-to-binary": "^1.0.1",
+    "history": "^4.7.2",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.11",
+    "parcel-bundler": "^1.10.3",
+    "pubnub": "^4.21.6",
+    "react": "^16.11.0",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.11.0",
+    "react-dropdown-autocomplete": "^1.2.7",
+    "react-router-dom": "^4.3.1",
+    "request": "^2.88.0",
+    "rm": "^0.1.8",
+    "uuid": "^3.3.2"
+  }
+}

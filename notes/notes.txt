@@ -1,0 +1,12 @@
+Chain Validation:
+
+1) Correct block fields present
+2) LastHash value must reference previous block correctly
+3) Valid hash
+	- Take all fields in block --> recreate hash, compare with hash in block
+	- If anything is changed, the block is declared invalid and rejected
+
+
+Blockchain network -->  different instances of the blockchain work together to determine longest valid chain
+
+Chain Replacement:
