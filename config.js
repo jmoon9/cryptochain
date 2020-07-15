@@ -10,9 +10,14 @@ const GENESIS_DATA = {
     data: []
 };
 
+const DUMMY_WALLET = {
+    address: 'foo_address',
+    balance: 0
+};
+
 const STARTING_BALANCE = 1000;
 
-const REWARD_INPUT = { address: '*authorized-reward*' };
+const REWARD_INPUT = { address: '*authorized-reward*', timestamp: Date.now(), amount: 'MoonCoin' };
 
 const MINING_REWARD = 50;
 
@@ -21,5 +26,6 @@ module.exports = {
     MINE_RATE, 
     STARTING_BALANCE,
     REWARD_INPUT,
-    MINING_REWARD
+    MINING_REWARD,
+    DUMMY_WALLET
 };

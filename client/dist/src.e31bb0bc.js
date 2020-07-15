@@ -37255,111 +37255,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = (0, _createBrowserHistory.default)();
 
 exports.default = _default;
-},{"history/createBrowserHistory":"../../node_modules/history/createBrowserHistory.js"}],"assets/moon.jpg":[function(require,module,exports) {
-module.exports = "/moon.4abb09a5.jpg";
-},{}],"components/App.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _reactRouterDom = require("react-router-dom");
-
-var _moon = _interopRequireDefault(require("../assets/moon.jpg"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var App =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(App, _Component);
-
-  function App() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    var _temp;
-
-    _classCallCheck(this, App);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
-      walletInfo: {}
-    }, _temp));
-  }
-
-  _createClass(App, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      fetch("".concat(document.location.origin, "/api/wallet-info")).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        return _this2.setState({
-          walletInfo: json
-        });
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$state$walletInf = this.state.walletInfo,
-          address = _this$state$walletInf.address,
-          balance = _this$state$walletInf.balance;
-      return _react.default.createElement("div", {
-        className: "App"
-      }, _react.default.createElement("img", {
-        className: "moon",
-        src: _moon.default
-      }), _react.default.createElement("br", null), _react.default.createElement("div", null, "Welcome to MoonCoin"), _react.default.createElement("br", null), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
-        to: "/blocks"
-      }, "Blocks")), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
-        to: "/conduct-transaction"
-      }, "Conduct Transaction")), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
-        to: "/transaction-pool"
-      }, "Transaction Pool")), _react.default.createElement("br", null), _react.default.createElement("div", {
-        className: "WalletInfo"
-      }, _react.default.createElement("div", null, "Address: ", address), _react.default.createElement("div", null, "Balance: ", balance)));
-    }
-  }]);
-
-  return App;
-}(_react.Component);
-
-var _default = App;
-exports.default = _default;
-},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/es/index.js","../assets/moon.jpg":"assets/moon.jpg"}],"../../node_modules/core-js/library/modules/_global.js":[function(require,module,exports) {
+},{"history/createBrowserHistory":"../../node_modules/history/createBrowserHistory.js"}],"../../node_modules/core-js/library/modules/_global.js":[function(require,module,exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
@@ -55307,7 +55203,238 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Accordion":"../../node_modules/react-bootstrap/es/Accordion.js","./Alert":"../../node_modules/react-bootstrap/es/Alert.js","./Badge":"../../node_modules/react-bootstrap/es/Badge.js","./Breadcrumb":"../../node_modules/react-bootstrap/es/Breadcrumb.js","./BreadcrumbItem":"../../node_modules/react-bootstrap/es/BreadcrumbItem.js","./Button":"../../node_modules/react-bootstrap/es/Button.js","./ButtonGroup":"../../node_modules/react-bootstrap/es/ButtonGroup.js","./ButtonToolbar":"../../node_modules/react-bootstrap/es/ButtonToolbar.js","./Carousel":"../../node_modules/react-bootstrap/es/Carousel.js","./CarouselItem":"../../node_modules/react-bootstrap/es/CarouselItem.js","./Checkbox":"../../node_modules/react-bootstrap/es/Checkbox.js","./Clearfix":"../../node_modules/react-bootstrap/es/Clearfix.js","./CloseButton":"../../node_modules/react-bootstrap/es/CloseButton.js","./ControlLabel":"../../node_modules/react-bootstrap/es/ControlLabel.js","./Col":"../../node_modules/react-bootstrap/es/Col.js","./Collapse":"../../node_modules/react-bootstrap/es/Collapse.js","./Dropdown":"../../node_modules/react-bootstrap/es/Dropdown.js","./DropdownButton":"../../node_modules/react-bootstrap/es/DropdownButton.js","./Fade":"../../node_modules/react-bootstrap/es/Fade.js","./Form":"../../node_modules/react-bootstrap/es/Form.js","./FormControl":"../../node_modules/react-bootstrap/es/FormControl.js","./FormGroup":"../../node_modules/react-bootstrap/es/FormGroup.js","./Glyphicon":"../../node_modules/react-bootstrap/es/Glyphicon.js","./Grid":"../../node_modules/react-bootstrap/es/Grid.js","./HelpBlock":"../../node_modules/react-bootstrap/es/HelpBlock.js","./Image":"../../node_modules/react-bootstrap/es/Image.js","./InputGroup":"../../node_modules/react-bootstrap/es/InputGroup.js","./Jumbotron":"../../node_modules/react-bootstrap/es/Jumbotron.js","./Label":"../../node_modules/react-bootstrap/es/Label.js","./ListGroup":"../../node_modules/react-bootstrap/es/ListGroup.js","./ListGroupItem":"../../node_modules/react-bootstrap/es/ListGroupItem.js","./Media":"../../node_modules/react-bootstrap/es/Media.js","./MenuItem":"../../node_modules/react-bootstrap/es/MenuItem.js","./Modal":"../../node_modules/react-bootstrap/es/Modal.js","./ModalBody":"../../node_modules/react-bootstrap/es/ModalBody.js","./ModalDialog":"../../node_modules/react-bootstrap/es/ModalDialog.js","./ModalFooter":"../../node_modules/react-bootstrap/es/ModalFooter.js","./ModalHeader":"../../node_modules/react-bootstrap/es/ModalHeader.js","./ModalTitle":"../../node_modules/react-bootstrap/es/ModalTitle.js","./Nav":"../../node_modules/react-bootstrap/es/Nav.js","./Navbar":"../../node_modules/react-bootstrap/es/Navbar.js","./NavbarBrand":"../../node_modules/react-bootstrap/es/NavbarBrand.js","./NavDropdown":"../../node_modules/react-bootstrap/es/NavDropdown.js","./NavItem":"../../node_modules/react-bootstrap/es/NavItem.js","./Overlay":"../../node_modules/react-bootstrap/es/Overlay.js","./OverlayTrigger":"../../node_modules/react-bootstrap/es/OverlayTrigger.js","./PageHeader":"../../node_modules/react-bootstrap/es/PageHeader.js","./PageItem":"../../node_modules/react-bootstrap/es/PageItem.js","./Pager":"../../node_modules/react-bootstrap/es/Pager.js","./Pagination":"../../node_modules/react-bootstrap/es/Pagination.js","./Panel":"../../node_modules/react-bootstrap/es/Panel.js","./PanelGroup":"../../node_modules/react-bootstrap/es/PanelGroup.js","./Popover":"../../node_modules/react-bootstrap/es/Popover.js","./ProgressBar":"../../node_modules/react-bootstrap/es/ProgressBar.js","./Radio":"../../node_modules/react-bootstrap/es/Radio.js","./ResponsiveEmbed":"../../node_modules/react-bootstrap/es/ResponsiveEmbed.js","./Row":"../../node_modules/react-bootstrap/es/Row.js","./SafeAnchor":"../../node_modules/react-bootstrap/es/SafeAnchor.js","./SplitButton":"../../node_modules/react-bootstrap/es/SplitButton.js","./Tab":"../../node_modules/react-bootstrap/es/Tab.js","./TabContainer":"../../node_modules/react-bootstrap/es/TabContainer.js","./TabContent":"../../node_modules/react-bootstrap/es/TabContent.js","./Table":"../../node_modules/react-bootstrap/es/Table.js","./TabPane":"../../node_modules/react-bootstrap/es/TabPane.js","./Tabs":"../../node_modules/react-bootstrap/es/Tabs.js","./Thumbnail":"../../node_modules/react-bootstrap/es/Thumbnail.js","./ToggleButton":"../../node_modules/react-bootstrap/es/ToggleButton.js","./ToggleButtonGroup":"../../node_modules/react-bootstrap/es/ToggleButtonGroup.js","./Tooltip":"../../node_modules/react-bootstrap/es/Tooltip.js","./Well":"../../node_modules/react-bootstrap/es/Well.js","./utils":"../../node_modules/react-bootstrap/es/utils/index.js"}],"components/Transaction.js":[function(require,module,exports) {
+},{"./Accordion":"../../node_modules/react-bootstrap/es/Accordion.js","./Alert":"../../node_modules/react-bootstrap/es/Alert.js","./Badge":"../../node_modules/react-bootstrap/es/Badge.js","./Breadcrumb":"../../node_modules/react-bootstrap/es/Breadcrumb.js","./BreadcrumbItem":"../../node_modules/react-bootstrap/es/BreadcrumbItem.js","./Button":"../../node_modules/react-bootstrap/es/Button.js","./ButtonGroup":"../../node_modules/react-bootstrap/es/ButtonGroup.js","./ButtonToolbar":"../../node_modules/react-bootstrap/es/ButtonToolbar.js","./Carousel":"../../node_modules/react-bootstrap/es/Carousel.js","./CarouselItem":"../../node_modules/react-bootstrap/es/CarouselItem.js","./Checkbox":"../../node_modules/react-bootstrap/es/Checkbox.js","./Clearfix":"../../node_modules/react-bootstrap/es/Clearfix.js","./CloseButton":"../../node_modules/react-bootstrap/es/CloseButton.js","./ControlLabel":"../../node_modules/react-bootstrap/es/ControlLabel.js","./Col":"../../node_modules/react-bootstrap/es/Col.js","./Collapse":"../../node_modules/react-bootstrap/es/Collapse.js","./Dropdown":"../../node_modules/react-bootstrap/es/Dropdown.js","./DropdownButton":"../../node_modules/react-bootstrap/es/DropdownButton.js","./Fade":"../../node_modules/react-bootstrap/es/Fade.js","./Form":"../../node_modules/react-bootstrap/es/Form.js","./FormControl":"../../node_modules/react-bootstrap/es/FormControl.js","./FormGroup":"../../node_modules/react-bootstrap/es/FormGroup.js","./Glyphicon":"../../node_modules/react-bootstrap/es/Glyphicon.js","./Grid":"../../node_modules/react-bootstrap/es/Grid.js","./HelpBlock":"../../node_modules/react-bootstrap/es/HelpBlock.js","./Image":"../../node_modules/react-bootstrap/es/Image.js","./InputGroup":"../../node_modules/react-bootstrap/es/InputGroup.js","./Jumbotron":"../../node_modules/react-bootstrap/es/Jumbotron.js","./Label":"../../node_modules/react-bootstrap/es/Label.js","./ListGroup":"../../node_modules/react-bootstrap/es/ListGroup.js","./ListGroupItem":"../../node_modules/react-bootstrap/es/ListGroupItem.js","./Media":"../../node_modules/react-bootstrap/es/Media.js","./MenuItem":"../../node_modules/react-bootstrap/es/MenuItem.js","./Modal":"../../node_modules/react-bootstrap/es/Modal.js","./ModalBody":"../../node_modules/react-bootstrap/es/ModalBody.js","./ModalDialog":"../../node_modules/react-bootstrap/es/ModalDialog.js","./ModalFooter":"../../node_modules/react-bootstrap/es/ModalFooter.js","./ModalHeader":"../../node_modules/react-bootstrap/es/ModalHeader.js","./ModalTitle":"../../node_modules/react-bootstrap/es/ModalTitle.js","./Nav":"../../node_modules/react-bootstrap/es/Nav.js","./Navbar":"../../node_modules/react-bootstrap/es/Navbar.js","./NavbarBrand":"../../node_modules/react-bootstrap/es/NavbarBrand.js","./NavDropdown":"../../node_modules/react-bootstrap/es/NavDropdown.js","./NavItem":"../../node_modules/react-bootstrap/es/NavItem.js","./Overlay":"../../node_modules/react-bootstrap/es/Overlay.js","./OverlayTrigger":"../../node_modules/react-bootstrap/es/OverlayTrigger.js","./PageHeader":"../../node_modules/react-bootstrap/es/PageHeader.js","./PageItem":"../../node_modules/react-bootstrap/es/PageItem.js","./Pager":"../../node_modules/react-bootstrap/es/Pager.js","./Pagination":"../../node_modules/react-bootstrap/es/Pagination.js","./Panel":"../../node_modules/react-bootstrap/es/Panel.js","./PanelGroup":"../../node_modules/react-bootstrap/es/PanelGroup.js","./Popover":"../../node_modules/react-bootstrap/es/Popover.js","./ProgressBar":"../../node_modules/react-bootstrap/es/ProgressBar.js","./Radio":"../../node_modules/react-bootstrap/es/Radio.js","./ResponsiveEmbed":"../../node_modules/react-bootstrap/es/ResponsiveEmbed.js","./Row":"../../node_modules/react-bootstrap/es/Row.js","./SafeAnchor":"../../node_modules/react-bootstrap/es/SafeAnchor.js","./SplitButton":"../../node_modules/react-bootstrap/es/SplitButton.js","./Tab":"../../node_modules/react-bootstrap/es/Tab.js","./TabContainer":"../../node_modules/react-bootstrap/es/TabContainer.js","./TabContent":"../../node_modules/react-bootstrap/es/TabContent.js","./Table":"../../node_modules/react-bootstrap/es/Table.js","./TabPane":"../../node_modules/react-bootstrap/es/TabPane.js","./Tabs":"../../node_modules/react-bootstrap/es/Tabs.js","./Thumbnail":"../../node_modules/react-bootstrap/es/Thumbnail.js","./ToggleButton":"../../node_modules/react-bootstrap/es/ToggleButton.js","./ToggleButtonGroup":"../../node_modules/react-bootstrap/es/ToggleButtonGroup.js","./Tooltip":"../../node_modules/react-bootstrap/es/Tooltip.js","./Well":"../../node_modules/react-bootstrap/es/Well.js","./utils":"../../node_modules/react-bootstrap/es/utils/index.js"}],"assets/moon.png":[function(require,module,exports) {
+module.exports = "/moon.bdc28cbf.png";
+},{}],"../../config.js":[function(require,module,exports) {
+var MINE_RATE = 1000;
+var INITIAL_DIFFICULTY = 3;
+var GENESIS_DATA = {
+  timestamp: 1,
+  lastHash: '-----',
+  hash: 'hash-one',
+  difficulty: INITIAL_DIFFICULTY,
+  nonce: 0,
+  data: []
+};
+var DUMMY_WALLET = {
+  address: 'foo_address',
+  balance: 0
+};
+var STARTING_BALANCE = 1000;
+var REWARD_INPUT = {
+  address: '*authorized-reward*',
+  timestamp: Date.now(),
+  amount: 'MoonCoin'
+};
+var MINING_REWARD = 50;
+module.exports = {
+  GENESIS_DATA: GENESIS_DATA,
+  MINE_RATE: MINE_RATE,
+  STARTING_BALANCE: STARTING_BALANCE,
+  REWARD_INPUT: REWARD_INPUT,
+  MINING_REWARD: MINING_REWARD,
+  DUMMY_WALLET: DUMMY_WALLET
+};
+},{}],"components/App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _reactBootstrap = require("react-bootstrap");
+
+var _moon = _interopRequireDefault(require("../assets/moon.png"));
+
+var _config = _interopRequireDefault(require("../../../config"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var App =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(App, _Component);
+
+  function App() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    var _temp;
+
+    _classCallCheck(this, App);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.state = {
+      walletInfo: _config.default,
+      is_connected: false,
+      publicKey: ''
+    }, _this.updatePubKey = function (event) {
+      _this.setState({
+        publicKey: event.target.value
+      });
+    }, _this.loadWallet = function () {
+      var publicKey = _this.state.publicKey;
+      console.log(publicKey, '\n\n\n\n');
+      fetch("".concat(document.location.origin, "/api/wallet-info"), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          publicKey: publicKey
+        })
+      }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        _this.setState({
+          walletInfo: json,
+          is_connected: true
+        });
+      });
+    }, _this.createWallet = function () {
+      fetch("".concat(document.location.origin, "/api/create-wallet")).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        _this.setState({
+          walletInfo: json,
+          is_connected: true
+        });
+
+        console.log(json);
+      });
+    }, _temp));
+  }
+
+  _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch("".concat(document.location.origin, "/api/current-wallet")).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        if (json.address !== _config.default.address) {
+          _this2.setState({
+            walletInfo: json,
+            is_connected: true
+          });
+        }
+      });
+    }
+  }, {
+    key: "connectButton",
+    value: function connectButton() {
+      if (!this.state.is_connected) {
+        return _react.default.createElement(_reactBootstrap.Button, {
+          bsStyle: "danger",
+          label: "Connect to Wallet",
+          onClick: this.loadWallet
+        }, "Connect to Wallet");
+      }
+    } // connectForm(){
+    //     if(!this.state.is_connected){
+    //         return(
+    //             <FormGroup>
+    //             <FormControl
+    //                 input='text'
+    //                 placeholder='Enter Your Wallet Public Key'
+    //                 value={this.state.publicKey}
+    //                 onChange={this.updatePubKey}
+    //             />
+    //             </FormGroup>
+    //         )
+    //     }
+    // }
+    // createButton(){
+    //     if(!this.state.is_connected){
+    //         return(
+    //             <Button
+    //                 bsStyle='danger'
+    //                 label='Create New Wallet'
+    //                 onClick={ this.createWallet }
+    //             >
+    //                 Create New Wallet
+    //             </Button>
+    //         )
+    //     }
+    // }
+
+  }, {
+    key: "addressDisplay",
+    value: function addressDisplay() {
+      if (this.state.walletInfo !== _config.default) {
+        return _react.default.createElement("div", null, "Address: ", this.state.walletInfo.address);
+      }
+    }
+  }, {
+    key: "balanceDisplay",
+    value: function balanceDisplay() {
+      if (this.state.walletInfo !== _config.default) {
+        return _react.default.createElement("div", null, "Balance: ", this.state.walletInfo.balance);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state$walletInf = this.state.walletInfo,
+          address = _this$state$walletInf.address,
+          balance = _this$state$walletInf.balance;
+      return _react.default.createElement("div", {
+        className: "App"
+      }, _react.default.createElement("img", {
+        className: "moon",
+        src: _moon.default,
+        height: 190,
+        width: 184
+      }), _react.default.createElement("br", null), _react.default.createElement("div", null, "Welcome to MoonCoin"), _react.default.createElement("br", null), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/blocks"
+      }, "Blocks")), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/conduct-transaction"
+      }, "Conduct Transaction")), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/transaction-pool"
+      }, "Transaction Pool")), _react.default.createElement("br", null), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "WalletInfo"
+      }, this.addressDisplay(), this.balanceDisplay(), this.connectForm(), this.connectButton(), _react.default.createElement("br", null), _react.default.createElement("br", null), this.createButton()));
+    }
+  }]);
+
+  return App;
+}(_react.Component);
+
+var _default = App;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/es/index.js","react-bootstrap":"../../node_modules/react-bootstrap/es/index.js","../assets/moon.png":"assets/moon.png","../../../config":"../../config.js"}],"components/Transaction.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -61611,7 +61738,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49723" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54465" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

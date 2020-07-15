@@ -50,32 +50,32 @@ class Blockchain{
                 if(transaction.input.address === REWARD_INPUT.address){
                     rewardTransactionCount += 1;
 
-                    if(rewardTransactionCount > 1){
+                    if(rewardTransactionCount > 1){         //ensure one miner reward given
                         console.error('Miner rewards exceed limit');
                         return false;
                     }
 
-                    if(Object.values(transaction.outputMap)[0] !== MINING_REWARD){
+                    if(Object.values(transaction.outputMap)[0] !== MINING_REWARD){      //correct miner amount
                         console.error('Miner reward amount is invalid');
                         return false;
                     }
                 }else{
-                    if(!Transaction.validTransaction(transaction)){
+                    if(!Transaction.validTransaction(transaction)){         
                         console.error('Invalid transaction');
                         return false;
                     }
 
-                    const trueBalance = Wallet.calculateBalance({
+                    const trueBalance = Wallet.calculateBalance({   //true balance of input wallet address after transaction
                         chain: this.chain,
                         address: transaction.input.address
                     });
 
-                    if(transaction.input.amount !== trueBalance){ 
+                    if(transaction.input.amount !== trueBalance){   //Inconsistency among true balance of account and balance in chain
                         console.error('Invalid input amount');
                         return false;
                     }
 
-                    if(transactionSet.has(transaction)){
+                    if(transactionSet.has(transaction)){        //duplicate transaction 
                         console.error('An identical transaction appears more than once in block');
                         return false;
                     } else {

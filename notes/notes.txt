@@ -10,3 +10,17 @@ Chain Validation:
 Blockchain network -->  different instances of the blockchain work together to determine longest valid chain
 
 Chain Replacement:
+
+
+Chain Rework strategy:
+
+Arduino MCU controller handles blockchain --> automatically mines block at 10 total data transacitons in transaciton pool
+Communications between system nodes and MCU are treated as "transactions"
+
+Transaction data mapping:
+	- id --> uuid()
+	- outputMap --> 
+		- Device data structures replace sender wallet addresses:
+			- Balance becomes total # of packages received/sent from MCU
+			- Sender/recipient becomes deviceid or MCU id
+			- 

@@ -11,7 +11,8 @@
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon app.js",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
     "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
-    "clean": "rmdir /q /s .cache"
+    "clean": "rmdir /q /s .cache",
+    "average-work": "node scripts/average-work.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -37,6 +38,8 @@
     "config": "^3.2.4",
     "elliptic": "^6.4.1",
     "express": "^4.16.3",
+    "firebase": "^7.4.0",
+    "firebase-admin": "^8.7.0",
     "hex-to-binary": "^1.0.1",
     "history": "^4.7.2",
     "joi": "^14.3.1",
